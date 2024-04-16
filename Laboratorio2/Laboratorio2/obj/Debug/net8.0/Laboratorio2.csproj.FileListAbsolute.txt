@@ -1,0 +1,42 @@
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Laboratorio2.exe
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Laboratorio2.deps.json
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Laboratorio2.runtimeconfig.json
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Laboratorio2.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Laboratorio2.pdb
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Spectre.Console.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\Spectre.Console.Cli.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\de\Spectre.Console.Cli.resources.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\fr\Spectre.Console.Cli.resources.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.AssemblyReference.cache
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.AssemblyInfoInputs.cache
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.AssemblyInfo.cs
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.CoreCompileInputs.cache
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.CopyComplete
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\refint\Laboratorio2.dll
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.pdb
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\Laboratorio2.genruntimeconfig.cache
+C:\Users\chica\Desktop\PARCIAL1-YONATAN CHICAS\Laboratorio2\Laboratorio2\obj\Debug\net8.0\ref\Laboratorio2.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Laboratorio2.exe
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Laboratorio2.deps.json
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Laboratorio2.runtimeconfig.json
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Laboratorio2.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Laboratorio2.pdb
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Spectre.Console.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\Spectre.Console.Cli.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\de\Spectre.Console.Cli.resources.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\fr\Spectre.Console.Cli.resources.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.AssemblyInfo.cs
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.csproj.CopyComplete
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\refint\Laboratorio2.dll
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.pdb
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\Laboratorio2.genruntimeconfig.cache
+C:\Users\PC\Desktop\PARCIAL\Laboratorio2\laboratorio2\obj\Debug\net8.0\ref\Laboratorio2.dll
