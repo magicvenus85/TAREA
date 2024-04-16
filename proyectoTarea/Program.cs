@@ -58,7 +58,7 @@ public class MovieWebsite
         }
         else
         {
-            UserMenu();
+            UserMenu(currentUser);
         }
     }
 
@@ -240,21 +240,22 @@ public class MovieWebsite
         }
     }
 
-    private void UserMenu()
+    private void UserMenu(User currentUser)
     {
         bool continueRunning = true;
         while (continueRunning)
         {
-            continueRunning = ShowMovieMenu();
+            continueRunning = ShowMovieMenu(currentUser);
         }
     }
 
-    private bool ShowMovieMenu()
+    private bool ShowMovieMenu(User currentUser)
     {
         Console.WriteLine("Seleccione una opción:");
         Console.WriteLine("1. Ver películas gratis");
         Console.WriteLine("2. Ver películas de paga");
-        Console.WriteLine("3. Salir");
+        Console.WriteLine("3. Ver mis películas compradas");
+        Console.WriteLine("4. Salir");
 
         string option = Console.ReadLine();
         switch (option)
@@ -266,6 +267,9 @@ public class MovieWebsite
                 ShowMovies(false); // Muestra películas de pago
                 return true;
             case "3":
+                ShowPurchasedMovies(currentUser); // Muestra películas compradas por el usuario
+                return true;
+            case "4":
                 return false; // Salir del programa
             default:
                 Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -298,6 +302,15 @@ public class MovieWebsite
         {
             Console.WriteLine("Selección inválida. Intente de nuevo.");
             ShowMovies(isFree);
+        }
+    }
+
+    private void ShowPurchasedMovies(User currentUser)
+    {
+        Console.WriteLine("Mis películas compradas:");
+        foreach (var movie in currentUser.PurchasedMovies)
+        {
+            Console.WriteLine($"- {movie.Title}");
         }
     }
 }
