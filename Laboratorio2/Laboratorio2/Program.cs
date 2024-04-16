@@ -1,4 +1,9 @@
-﻿using System;
+//CREADO POR 
+//MARIO ORLANDO SALAMANCA GUZMAN U20210994
+//YONATAN AGUSTIN CHICAS AMAYA U20211000
+//ULISES ISMAEL QUINTANILLA LOPEZ
+
+using System;
 using System.Collections.Generic;
 using Spectre.Console;
 
