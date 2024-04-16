@@ -8,7 +8,7 @@ public enum UserType
     User
 }
 
-public record User(string Email, string Password, UserType Type);
+public record User(string Email, string Password, UserType Type, List<Movie> PurchasedMovies);
 
 public record Movie(string Title, bool IsFree, string Category);
 
@@ -20,23 +20,12 @@ public class MovieWebsite
     public MovieWebsite()
     {
         // Añadiendo un usuario administrador especial
-        Users.Add(new User("admin@gmail.com", "123456", UserType.Admin));
-        
+        Users.Add(new User("admin@gmail.com", "123456", UserType.Admin, new List<Movie>()));
+
         // Añadiendo usuarios regulares
         for (int i = 1; i <= 20; i++) // Agregando hasta 20 para incluir los 10 adicionales
         {
-            // Añadiendo usuarios regulares
-Users.Add(new User("user1@test.com", "123456", UserType.User));
-Users.Add(new User("user2@test.com", "123456", UserType.User));
-Users.Add(new User("user3@test.com", "123456", UserType.User));
-Users.Add(new User("user4@test.com", "123456", UserType.User));
-Users.Add(new User("user5@test.com", "123456", UserType.User));
-Users.Add(new User("user6@test.com", "123456", UserType.User));
-Users.Add(new User("user7@test.com", "123456", UserType.User));
-Users.Add(new User("user8@test.com", "123456", UserType.User));
-Users.Add(new User("user9@test.com", "123456", UserType.User));
-Users.Add(new User("user10@test.com", "123456", UserType.User));
-
+            Users.Add(new User($"user{i}@test.com", "123456", UserType.User, new List<Movie> { new Movie("Megamente", false, "Animation") }));
         }
 
         // Añadiendo algunas películas de prueba
@@ -86,6 +75,8 @@ Users.Add(new User("user10@test.com", "123456", UserType.User));
             Console.WriteLine("5. Dividir películas en categorías");
             Console.WriteLine("6. Ver todas las compras");
             Console.WriteLine("7. Ver todos los usuarios");
+            Console.WriteLine("8. Ver películas compradas por usuarios");
+            Console.WriteLine("9. Ver películas compradas por usuario específico");
             Console.WriteLine("0. Salir");
 
             string option = Console.ReadLine();
@@ -112,6 +103,12 @@ Users.Add(new User("user10@test.com", "123456", UserType.User));
                 case "7":
                     ShowAllUsers();
                     break;
+                case "8":
+                    ShowPurchasedMoviesByUsers();
+                    break;
+                case "9":
+                    ShowPurchasedMoviesByUser();
+                    break;
                 case "0":
                     continueRunning = false;
                     break;
@@ -119,6 +116,41 @@ Users.Add(new User("user10@test.com", "123456", UserType.User));
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
                     break;
             }
+        }
+    }
+
+    private void ShowPurchasedMoviesByUsers()
+    {
+        Console.WriteLine("Películas compradas por usuarios:");
+        foreach (var user in Users)
+        {
+            if (user.PurchasedMovies.Any())
+            {
+                Console.WriteLine($"Usuario: {user.Email}");
+                foreach (var movie in user.PurchasedMovies)
+                {
+                    Console.WriteLine($"- {movie.Title}");
+                }
+            }
+        }
+    }
+
+    private void ShowPurchasedMoviesByUser()
+    {
+        Console.WriteLine("Ingrese el correo electrónico del usuario:");
+        string userEmail = Console.ReadLine();
+
+        var user = Users.Find(u => u.Email == userEmail);
+        if (user == null)
+        {
+            Console.WriteLine("Usuario no encontrado.");
+            return;
+        }
+
+        Console.WriteLine($"Películas compradas por {userEmail}:");
+        foreach (var movie in user.PurchasedMovies)
+        {
+            Console.WriteLine($"- {movie.Title}");
         }
     }
 
