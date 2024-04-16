@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Spectre.Console;
 
 public enum UserType
 {
@@ -37,20 +38,20 @@ public class MovieWebsite
 
     public void Run()
     {
-        Console.WriteLine("Ingrese su correo electrónico:");
+        AnsiConsole.MarkupLine("Ingrese su correo electrónico:");
         string email = Console.ReadLine();
-        Console.WriteLine("Ingrese su contraseña:");
+        AnsiConsole.MarkupLine("Ingrese su contraseña:");
         string password = Console.ReadLine();
 
         User currentUser = Users.Find(user => user.Email == email && user.Password == password);
 
         if (currentUser == null)
         {
-            Console.WriteLine("Usuario o contraseña incorrectos.");
+            AnsiConsole.MarkupLine("[red]Usuario o contraseña incorrectos.[/]");
             return;
         }
 
-        Console.WriteLine($"Bienvenido {currentUser.Email}!");
+        AnsiConsole.MarkupLine($"Bienvenido [bold]{currentUser.Email}[/]!");
 
         if (currentUser.Type == UserType.Admin)
         {
@@ -67,17 +68,17 @@ public class MovieWebsite
         bool continueRunning = true;
         while (continueRunning)
         {
-            Console.WriteLine("Menú Administrador:");
-            Console.WriteLine("1. Ver todas las películas");
-            Console.WriteLine("2. Agregar película");
-            Console.WriteLine("3. Editar película");
-            Console.WriteLine("4. Separar películas en gratuitas y de pago");
-            Console.WriteLine("5. Dividir películas en categorías");
-            Console.WriteLine("6. Ver todas las compras");
-            Console.WriteLine("7. Ver todos los usuarios");
-            Console.WriteLine("8. Ver películas compradas por usuarios");
-            Console.WriteLine("9. Ver películas compradas por usuario específico");
-            Console.WriteLine("0. Salir");
+            AnsiConsole.MarkupLine("[bold]Menú Administrador:[/]");
+            AnsiConsole.MarkupLine("1. Ver todas las películas");
+            AnsiConsole.MarkupLine("2. Agregar película");
+            AnsiConsole.MarkupLine("3. Editar película");
+            AnsiConsole.MarkupLine("4. Separar películas en gratuitas y de pago");
+            AnsiConsole.MarkupLine("5. Dividir películas en categorías");
+            AnsiConsole.MarkupLine("6. Ver todas las compras");
+            AnsiConsole.MarkupLine("7. Ver todos los usuarios");
+            AnsiConsole.MarkupLine("8. Ver películas compradas por usuarios");
+            AnsiConsole.MarkupLine("9. Ver películas compradas por usuario específico");
+            AnsiConsole.MarkupLine("0. Salir");
 
             string option = Console.ReadLine();
             switch (option)
@@ -113,7 +114,7 @@ public class MovieWebsite
                     continueRunning = false;
                     break;
                 default:
-                    Console.WriteLine("Opción no válida. Intente de nuevo.");
+                    AnsiConsole.MarkupLine("[red]Opción no válida. Intente de nuevo.[/]");
                     break;
             }
         }
@@ -121,15 +122,15 @@ public class MovieWebsite
 
     private void ShowPurchasedMoviesByUsers()
     {
-        Console.WriteLine("Películas compradas por usuarios:");
+        AnsiConsole.MarkupLine("Películas compradas por usuarios:");
         foreach (var user in Users)
         {
             if (user.PurchasedMovies.Any())
             {
-                Console.WriteLine($"Usuario: {user.Email}");
+                AnsiConsole.MarkupLine($"Usuario: {user.Email}");
                 foreach (var movie in user.PurchasedMovies)
                 {
-                    Console.WriteLine($"- {movie.Title}");
+                    AnsiConsole.MarkupLine($"- {movie.Title}");
                 }
             }
         }
@@ -137,57 +138,57 @@ public class MovieWebsite
 
     private void ShowPurchasedMoviesByUser()
     {
-        Console.WriteLine("Ingrese el correo electrónico del usuario:");
+        AnsiConsole.MarkupLine("Ingrese el correo electrónico del usuario:");
         string userEmail = Console.ReadLine();
 
         var user = Users.Find(u => u.Email == userEmail);
         if (user == null)
         {
-            Console.WriteLine("Usuario no encontrado.");
+            AnsiConsole.MarkupLine("Usuario no encontrado.");
             return;
         }
 
-        Console.WriteLine($"Películas compradas por {userEmail}:");
+        AnsiConsole.MarkupLine($"Películas compradas por {userEmail}:");
         foreach (var movie in user.PurchasedMovies)
         {
-            Console.WriteLine($"- {movie.Title}");
+            AnsiConsole.MarkupLine($"- {movie.Title}");
         }
     }
 
     private void AddMovie()
     {
-        Console.WriteLine("Ingrese el título de la película:");
+        AnsiConsole.MarkupLine("Ingrese el título de la película:");
         string title = Console.ReadLine();
-        Console.WriteLine("¿Es gratuita la película? (sí/no):");
+        AnsiConsole.MarkupLine("¿Es gratuita la película? (sí/no):");
         bool isFree = Console.ReadLine().ToLower() == "sí";
-        Console.WriteLine("Ingrese la categoría de la película:");
+        AnsiConsole.MarkupLine("Ingrese la categoría de la película:");
         string category = Console.ReadLine();
 
         Movies.Add(new Movie(title, isFree, category));
-        Console.WriteLine("Película agregada exitosamente.");
+        AnsiConsole.MarkupLine("Película agregada exitosamente.");
     }
 
     private void EditMovie()
     {
-        Console.WriteLine("Ingrese el título de la película que desea editar:");
+        AnsiConsole.MarkupLine("Ingrese el título de la película que desea editar:");
         string title = Console.ReadLine();
 
         var movie = Movies.Find(m => m.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
         if (movie == null)
         {
-            Console.WriteLine("La película no existe.");
+            AnsiConsole.MarkupLine("La película no existe.");
             return;
         }
 
-        Console.WriteLine("Ingrese el nuevo título de la película:");
+        AnsiConsole.MarkupLine("Ingrese el nuevo título de la película:");
         string newTitle = Console.ReadLine();
-        Console.WriteLine("¿Es gratuita la película? (sí/no):");
+        AnsiConsole.MarkupLine("¿Es gratuita la película? (sí/no):");
         bool isFree = Console.ReadLine().ToLower() == "sí";
-        Console.WriteLine("Ingrese la nueva categoría de la película:");
+        AnsiConsole.MarkupLine("Ingrese la nueva categoría de la película:");
         string category = Console.ReadLine();
 
         movie = new Movie(newTitle, isFree, category);
-        Console.WriteLine("Película editada exitosamente.");
+        AnsiConsole.MarkupLine("Película editada exitosamente.");
     }
 
     private void SplitMoviesByFree()
@@ -195,16 +196,16 @@ public class MovieWebsite
         var freeMovies = Movies.Where(m => m.IsFree).ToList();
         var paidMovies = Movies.Where(m => !m.IsFree).ToList();
 
-        Console.WriteLine("Películas Gratuitas:");
+        AnsiConsole.MarkupLine("Películas Gratuitas:");
         foreach (var movie in freeMovies)
         {
-            Console.WriteLine($"Título: {movie.Title}, Categoría: {movie.Category}");
+            AnsiConsole.MarkupLine($"Título: {movie.Title}, Categoría: {movie.Category}");
         }
 
-        Console.WriteLine("\nPelículas de Pago:");
+        AnsiConsole.MarkupLine("\nPelículas de Pago:");
         foreach (var movie in paidMovies)
         {
-            Console.WriteLine($"Título: {movie.Title}, Categoría: {movie.Category}");
+            AnsiConsole.MarkupLine($"Título: {movie.Title}, Categoría: {movie.Category}");
         }
     }
 
@@ -212,31 +213,36 @@ public class MovieWebsite
     {
         var categories = Movies.Select(m => m.Category).Distinct().ToList();
 
-        Console.WriteLine("Películas por Categoría:");
+        AnsiConsole.MarkupLine("Películas por Categoría:");
         foreach (var category in categories)
         {
             var moviesInCategory = Movies.Where(m => m.Category == category).ToList();
-            Console.WriteLine($"\nCategoría: {category}");
+            AnsiConsole.MarkupLine($"\nCategoría: {category}");
             foreach (var movie in moviesInCategory)
             {
-                Console.WriteLine($"Título: {movie.Title}");
+                AnsiConsole.MarkupLine($"Título: {movie.Title}");
             }
         }
     }
 
     private void ShowAllMovies()
     {
+        var table = new Table().Centered().Border(TableBorder.Minimal);
+        table.AddColumn("Título").AddColumn("Gratis").AddColumn("Categoría");
+
         foreach (var movie in Movies)
         {
-            Console.WriteLine($"Título: {movie.Title}, Gratis: {movie.IsFree}, Categoría: {movie.Category}");
+            table.AddRow(movie.Title, movie.IsFree.ToString(), movie.Category);
         }
+
+        AnsiConsole.Render(table);
     }
 
     private void ShowAllUsers()
     {
         foreach (var user in Users)
         {
-            Console.WriteLine($"Email: {user.Email}, Tipo: {user.Type}");
+            AnsiConsole.MarkupLine($"Email: {user.Email}, Tipo: {user.Type}");
         }
     }
 
@@ -251,11 +257,11 @@ public class MovieWebsite
 
     private bool ShowMovieMenu(User currentUser)
     {
-        Console.WriteLine("Seleccione una opción:");
-        Console.WriteLine("1. Ver películas gratis");
-        Console.WriteLine("2. Ver películas de paga");
-        Console.WriteLine("3. Ver mis películas compradas");
-        Console.WriteLine("4. Salir");
+        AnsiConsole.MarkupLine("Seleccione una opción:");
+        AnsiConsole.MarkupLine("1. Ver películas gratis");
+        AnsiConsole.MarkupLine("2. Ver películas de paga");
+        AnsiConsole.MarkupLine("3. Ver mis películas compradas");
+        AnsiConsole.MarkupLine("4. Salir");
 
         string option = Console.ReadLine();
         switch (option)
@@ -272,7 +278,7 @@ public class MovieWebsite
             case "4":
                 return false; // Salir del programa
             default:
-                Console.WriteLine("Opción no válida. Intente de nuevo.");
+                AnsiConsole.MarkupLine("[red]Opción no válida. Intente de nuevo.[/]");
                 return true;
         }
     }
@@ -282,35 +288,35 @@ public class MovieWebsite
         var filteredMovies = Movies.Where(movie => movie.IsFree == isFree).ToList();
         if (!filteredMovies.Any())
         {
-            Console.WriteLine("No hay películas disponibles en esta categoría.");
+            AnsiConsole.MarkupLine("No hay películas disponibles en esta categoría.");
             return;
         }
 
-        Console.WriteLine("Películas disponibles:");
+        AnsiConsole.MarkupLine("Películas disponibles:");
         for (int i = 0; i < filteredMovies.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {filteredMovies[i].Title} - {filteredMovies[i].Category}");
+            AnsiConsole.MarkupLine($"{i + 1}. {filteredMovies[i].Title} - {filteredMovies[i].Category}");
         }
 
-        Console.WriteLine("Ingrese el número de la película que desea ver:");
+        AnsiConsole.MarkupLine("Ingrese el número de la película que desea ver:");
         if (int.TryParse(Console.ReadLine(), out int movieSelection) && movieSelection > 0 && movieSelection <= filteredMovies.Count)
         {
             var selectedMovie = filteredMovies[movieSelection - 1];
-            Console.WriteLine($"Disfruta viendo {selectedMovie.Title}!");
+            AnsiConsole.MarkupLine($"Disfruta viendo {selectedMovie.Title}!");
         }
         else
         {
-            Console.WriteLine("Selección inválida. Intente de nuevo.");
+            AnsiConsole.MarkupLine("Selección inválida. Intente de nuevo.");
             ShowMovies(isFree);
         }
     }
 
     private void ShowPurchasedMovies(User currentUser)
     {
-        Console.WriteLine("Mis películas compradas:");
+        AnsiConsole.MarkupLine("Mis películas compradas:");
         foreach (var movie in currentUser.PurchasedMovies)
         {
-            Console.WriteLine($"- {movie.Title}");
+            AnsiConsole.MarkupLine($"- {movie.Title}");
         }
     }
 }
